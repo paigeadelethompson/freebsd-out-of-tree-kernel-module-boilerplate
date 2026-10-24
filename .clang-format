@@ -1,0 +1,98 @@
+# .clang-format for FreeBSD kernel module style (KNF)
+# Based on FreeBSD Kernel Normal Form: tabs for indentation,
+# K&R brace style, 8-space tab width.
+
+BasedOnStyle: LLVM
+Language: Cpp
+
+# Indentation
+IndentWidth: 8
+TabWidth: 8
+UseTab: Always
+
+# Braces
+BreakBeforeBraces: Attach
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: Never
+AllowShortFunctionsOnASingleLine: None
+AllowShortLoopsOnASingleLine: false
+
+# Pointers and references
+PointerAlignment: Left
+ReferenceAlignment: Left
+
+# Spaces
+SpaceBeforeParens: Never
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 1
+SpacesInAngles: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+SpaceAfterCStyleCast: false
+SpaceAfterTemplateKeyword: false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCaseColon: false
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeColon: false
+SpaceBeforeComma: false
+SpaceBeforeRangeBasedForLoopColon: false
+SpaceInEmptyBlock: false
+SpaceInEmptyFunction: false
+SpaceBeforeSquareBrackets: false
+
+# Line breaking
+ColumnLimit: 80
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowAllInitializerArgumentsOnNextLine: false
+AllowAllConstructorInitializersOnNextLine: false
+AllowAllFunctionArgsOnNextLine: false
+AllowAllLoopPartsOnNextLine: false
+AllowAllStatementsOnNextLine: false
+BinPackArguments: false
+BinPackParameters: false
+
+# Comments
+CommentPragmas: '^\s+'
+
+# Formatting
+DerivePointerAlignment: false
+DisableFormat: false
+FixNamespaceComments: false
+IncludeCategories: []
+IncludeIsMainRegex: ('(test|unittest)\.h$')
+IncludeIsMainSourceRegex: ''
+IndentCaseLabels: false
+IndentCaseLabels: false
+IndentExternBlock: AfterExternBlock
+IndentGotoLabels: true
+IndentPPDirectives: None
+IndentRequiresExpression: false
+IndentWrappedFunctionNames: false
+
+# Limits
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: None
+PenaltyBreakBeforeFirstCallParameter: 1
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakString: 1000
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 60
+
+# Standard
+Standard: c11
+
+# Sorting
+SortIncludes: Never
+SortUsingDeclarations: Never
+
+# Other
+KeepEmptyLinesAtTheStartOfBlocks: false
+ReflowComments: false
+SortIncludes: Never
+SpaceBeforeParens: Never
+SpaceBeforeParens: Never
+SpaceBeforeParens: Never
+Standard: c11
+UseTab: Never
