@@ -114,3 +114,35 @@ MODULE_VERSION(example, 1);
 
 The first argument to `DECLARE_MODULE` must match your `KMOD` name.
 Use `__unused` on unused parameters — the build uses `-Werror`.
+
+## Testing
+
+ATF tests for kernel modules follow the in-tree pattern under
+`/usr/src/sys/modules/tests/`:
+
+```
+tests/
+├── Makefile          # Test directory makefile (bsd.subdir.mk)
+└── module/
+    ├── Makefile      # Test makefile (bsd.kmod.mk)
+    └── test_example.c # Test kernel module source
+```
+
+The `tests/module/` directory builds a test kernel module (`test_example.ko`)
+that can be loaded and then verified with an ATF test program. The ATF test
+programs live in `/usr/src/tests/sys/kern/` (e.g., `module_test.c`) and use
+functions like `modfind()`, `modnext()`, and `modstat()` to verify module
+behavior.
+
+To build the test module:
+
+```sh
+make -C tests
+```
+
+This produces `tests/module/test_example.ko` which can be loaded with
+`kldload` and tested.
+
+## License
+
+BSD 2-Clause. See individual source files for their specific license headers.

@@ -11,9 +11,16 @@ This is a boilerplate for building FreeBSD kernel modules out-of-tree (outside `
 ├── Makefile          # Build file using <bsd.kmod.mk>
 ├── example.c         # Sample kernel module source
 ├── example.h         # Sample header (shared declarations)
+├── .clang-format     # clang-format config (FreeBSD KNF style)
 ├── .gitignore        # Git ignore rules
+├── LICENSE           # BSD 2-Clause license
 ├── README.md         # User documentation
-└── AGENTS.md         # This file (agent guidance)
+├── AGENTS.md         # This file (agent guidance)
+└── tests/            # Test kernel modules
+    ├── Makefile      # Test directory makefile (bsd.subdir.mk)
+    └── module/
+        ├── Makefile  # Test makefile (bsd.kmod.mk)
+        └── test_example.c  # Test kernel module source
 ```
 
 ## Build System

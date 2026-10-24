@@ -28,3 +28,6 @@ opt_global.h
 *~
 *.swp
 *.swo
+
+# tmp/ dev files
+tmp/
