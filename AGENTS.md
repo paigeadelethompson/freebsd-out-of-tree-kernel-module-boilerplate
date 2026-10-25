@@ -167,3 +167,7 @@ Set `MODULE_TIED` to build against a specific kernel configuration. This adds `o
 - **Unused parameters**: Mark with `__unused` to avoid `-Werror` failures
 - **Module declaration**: Use `DECLARE_MODULE(name, mod, subsys, order)` — the first arg must match `KMOD`
 - **License header**: BSD 2-Clause with SPDX identifier
+- **Debug logging**: `EXAMPLE_DEBUG()` is defined in `example.h` and gates
+  `printf` on `bootverbose` (declared in `<sys/systm.h>`). Use it on error
+  paths and other diagnostics that should print only when the kernel is
+  booted with `-v` / `boot_verbose="YES"`.

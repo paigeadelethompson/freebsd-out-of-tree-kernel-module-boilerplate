@@ -44,15 +44,19 @@ example_modevent(module_t mod __unused, int type, void *data __unused)
 
 	switch (type) {
 	case MOD_LOAD:
+		EXAMPLE_DEBUG("loading");
 		uprintf("example: module loaded\n");
 		break;
 	case MOD_UNLOAD:
+		EXAMPLE_DEBUG("unloading");
 		uprintf("example: module unloaded\n");
 		break;
 	case MOD_SHUTDOWN:
+		EXAMPLE_DEBUG("shutting down");
 		uprintf("example: system shutting down\n");
 		break;
 	default:
+		EXAMPLE_DEBUG("unsupported modevent type %d", type);
 		error = EOPNOTSUPP;
 		break;
 	}

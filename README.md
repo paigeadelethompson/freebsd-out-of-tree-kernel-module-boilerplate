@@ -115,6 +115,21 @@ MODULE_VERSION(example, 1);
 The first argument to `DECLARE_MODULE` must match your `KMOD` name.
 Use `__unused` on unused parameters — the build uses `-Werror`.
 
+## Debugging
+
+`example.h` provides an `EXAMPLE_DEBUG()` macro that only prints when the
+kernel is booted verbose (`-v` / `boot_verbose="YES"`):
+
+```c
+EXAMPLE_DEBUG("unsupported modevent type %d", type);
+```
+
+It prefixes each message with `example: <function>:`, so output from
+different code paths is easy to tell apart. Add calls on error paths and
+anywhere else a diagnostic is useful without being noisy in normal
+operation. To make it always-on for local testing, drop the `bootverbose`
+check in the macro.
+
 ## Testing
 
 ATF tests for kernel modules follow the in-tree pattern under

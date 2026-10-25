@@ -29,6 +29,18 @@
 #ifndef _EXAMPLE_H_
 #define _EXAMPLE_H_
 
+#include <sys/systm.h>
+
+/*
+ * Debug trace.  Only prints when bootverbose is set, so it is silent in
+ * normal operation.  Boot with -v / boot_verbose="YES" to enable it.
+ */
+#define	EXAMPLE_DEBUG(fmt, ...)	do {					\
+	if (bootverbose)						\
+		printf("example: %s: " fmt "\n", __func__,		\
+		    ##__VA_ARGS__);					\
+} while (0)
+
 /*
  * Place shared declarations, structure definitions, or inline functions
  * used by multiple source files in this module here.
